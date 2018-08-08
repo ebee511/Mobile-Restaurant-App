@@ -1,0 +1,97 @@
+@media only screen and (min-width: 300px) {
+	#map {
+		height: 400px;
+	}
+
+	#restaurants-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+@media only screen and (min-width: 581px) {
+	.filter-options h2 {
+		display: inline;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	/* Change size of select buttons */
+	.filter-options h2 {
+		display: inline-block;
+	}
+
+	.filter-options select {
+		width: 150px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.filter-options h2 {
+		display: block;
+		text-align: center;
+		padding-top: 15px;
+	}
+	.filter-options {
+		height: 100px;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 380px) and (min-width: 361px) {
+	#restaurants-list {
+		padding: 30px 13px 60px;
+	}
+
+	#restaurants-list li {
+		margin: 10px auto;
+	}
+}
+
+@media only screen and (max-width: 343) {
+	.filter-options {
+		height: 150px;
+	}
+}
+
+@media only screen and (min-width: 344) {
+	.filter-options {
+		height: 100px;
+	}
+}
+
+
+@media only screen and (max-width: 360px) and (min-width: 321px) {
+	.filter-options {
+		height: 100px;
+	}
+
+	.filter-options select {
+		width: 150px;
+		padding: 0 0 0 5px;
+	}
+
+	#restaurants-list li {
+		padding: 10px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.filter-options {
+		height: 140px;
+	}
+
+	.filter-options select {
+		width: 150px;
+		padding: 0 0 0 5px;
+		margin: 10px 10px 5px;
+	}
+
+	#restaurants-list li {
+		margin: 0 0 15px 0;
+		padding: 8px;
+	}
+}
+
+
