@@ -1,4 +1,4 @@
-var cacheName = 'restaurantLanding-v9';
+var cacheName = 'restaurantLanding-v28';
 var filesToCache = [
 	'/',
 	'index.html', 
