@@ -1,31 +1,31 @@
 /* TABLET VIEW */
-@media only screen and (min-width: 500px) and (max-width: 768px) {
+@media only screen and (min-width: 750px) and (max-width: 950px) {
+	#reviews-list li {
+		width: 80%;
+	}
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 749px) {
+	#breadcrumb {
+		width: 100%;
+		padding: 10px 0 16px;
+	}
+
+	#home-root {
+		margin-left: 20px;
+	}
+
+	#restaurant-container,
+	#reviews-container {
+		width: 100%;
+	}
 
 	.inside #map-container {
+		width: 100%;
+		height: 300px;
 		position: relative;
-		width: 80%;
-		padding: 0 40px;
-	}
-
-	#map {
-		top: 150px;
-	}
-
-	div.leaflet-top.leaflet-left {
-		top: 70px;
-	}
-
-	#restaurant-container {
-		padding: 160px 20px 30px;
-	}
-
-	#reviews-container {
-		padding: 30px 20px 80px;
-	}
-
-	#reviews-list li {
-		padding: 10px 20px 20px;
-		display: inline;
+		top: 130px;
 	}
 
 }
