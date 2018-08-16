@@ -1,26 +1,25 @@
-var cacheName = 'restaurantLanding-v37';
+var cacheName = 'restaurantLanding-v48';
 var filesToCache = [
 	'/',
-	'index.html', 
-	'README.md', 
-	'restaurant.html',
-	'css/restaurant-media-queries.css',
-	'css/neighborhoods-media-queries.css',
-	'css/styles.css',
-	'data/restaurants.json', 
-	'img/1.jpg',
-	'img/2.jpg',
-	'img/3.jpg',
-	'img/4.jpg',
-	'img/5.jpg', 
-	'img/6.jpg', 
-	'img/7.jpg', 
-	'img/8.jpg', 
-	'img/9.jpg', 
-	'img/10.jpg', 
-	'js/dbhelper.js',
-	'js/main.js',
-	'js/restaurant_info.js'
+	'/index.html', 
+	'/restaurant.html',
+	'/css/restaurant-media-queries.css',
+	'/css/neighborhoods-media-queries.css',
+	'/css/styles.css',
+	'/data/restaurants.json', 
+	'/img/1.jpg',
+	'/img/2.jpg',
+	'/img/3.jpg',
+	'/img/4.jpg',
+	'/img/5.jpg', 
+	'/img/6.jpg', 
+	'/img/7.jpg', 
+	'/img/8.jpg', 
+	'/img/9.jpg', 
+	'/img/10.jpg', 
+	'/js/dbhelper.js',
+	'/js/main.js',
+	'/js/restaurant_info.js'
 ];
 
 //Listen for install event, set callback;
@@ -60,7 +59,8 @@ self.addEventListener('fetch', function(event) {
 	console.log('[ServiceWorker] Fetch', event.request.url);
 	event.respondWith(
 		caches.match(event.request).then(function(response) {
+			//If response in cache
 			return response || fetch(event.request);
-		})
+			})
 	);
 });
