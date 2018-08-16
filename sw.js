@@ -1,4 +1,4 @@
-var cacheName = 'restaurantLanding-v48';
+var cacheName = 'restaurantLanding-v58';
 var filesToCache = [
 	'/',
 	'/index.html', 
@@ -19,7 +19,9 @@ var filesToCache = [
 	'/img/10.jpg', 
 	'/js/dbhelper.js',
 	'/js/main.js',
-	'/js/restaurant_info.js'
+	'/js/restaurant_info.js',
+	'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
+	'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css'
 ];
 
 //Listen for install event, set callback;
@@ -30,12 +32,13 @@ self.addEventListener('install', function(event) {
 	event.waitUntil(
 		//open cache and give cache name, helps to create versions
 		caches.open(cacheName).then(function(cache) {
-			console.log('[ServiceWorker] Caching app shell');
+			console.log('[ServiceWorker] Caching filesToCache');
 			//takes list of URLs, fetches them from server, adds response to the cache
 			return cache.addAll(filesToCache);
+		}).then(function() {
+			return self.skipWaiting();
 		})
 	);
-	self.skipWaiting();
 });
 
 //Listen for activate event, delete old cache and install new cache
@@ -59,8 +62,21 @@ self.addEventListener('fetch', function(event) {
 	console.log('[ServiceWorker] Fetch', event.request.url);
 	event.respondWith(
 		caches.match(event.request).then(function(response) {
-			//If response in cache
-			return response || fetch(event.request);
-			})
+			if (response) {
+				console.log('[ServiceWorker] Found in cache', event.request.url);
+				return response;
+			} else {
+				return fetch(event.request).then(function(response) {
+					var responseClone = response.clone();
+					caches.open(cacheName).then(function(cache) {
+						cache.put(event.request, responseClone);
+					})
+					return response;
+				})
+			.catch(function(err) {
+				console.log('[ServiceWorker] Error Fetching & Caching.' + err)
+			});
+		}
+	})
 	);
 });
