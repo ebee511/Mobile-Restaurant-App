@@ -24,10 +24,10 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 3. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
 
 ## Dependencies
-[leafletjs](https://leafletjs.com/) for JavaScript map library.
-[Mapbox](https://www.mapbox.com/) for map integration.
-[Udacity](https://github.com/udacity) for starter files.
-[BitsofCode](https://www.youtube.com/watch?v=BfL3pprhnms) for service worker guidance.
+* [leafletjs](https://leafletjs.com/) for JavaScript map library.
+* [Mapbox](https://www.mapbox.com/) for map integration.
+* [Udacity](https://github.com/udacity) for starter files.
+* [BitsofCode](https://www.youtube.com/watch?v=BfL3pprhnms) for service worker guidance.
 
 ## Contributions
 
